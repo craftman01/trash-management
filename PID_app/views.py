@@ -160,7 +160,7 @@ from datetime import datetime
 @ensure_csrf_cookie
 def Add_request_data(request):
     uname=request.session["uname"]
-    # uname="Aswin123"
+    # uname="Suraj123"
     data={}
     if request.method == "GET":
         return render(request, 'Shophome.html', )
@@ -216,7 +216,7 @@ def handle_uploaded_file(f,name):
 
 def Customer_view_requests(request):
     uname=request.session["uname"]
-    # uname="Aswin123"
+    # uname="Suraj123"
     ob=Waste_table.objects.filter(Uname=uname)
     return render(request,'Customer_view_rqst.html',{'data':ob})
 
@@ -234,7 +234,7 @@ def Volunteer_view_request(request):
 
 def Accept_wrequest(request):
     uname=request.session["uname"]
-    # uname="Ak1234"
+    # uname="kishor123"
     obusr=Volunteer_reg.objects.get(Username=uname)
     vname=obusr.Name
     data={}
@@ -252,7 +252,7 @@ def Accept_wrequest(request):
 
 def Volunterr_accepted_requests(request):
     uname=request.session["uname"]
-    # uname="Ak1234"
+    # uname="kishor123"
     ob=Waste_table.objects.filter(Vuname=uname,Status="Not completed")
     return render(request,'Volunteer_accepted.html',{"data":ob})
 
@@ -264,7 +264,7 @@ def Get_waste_loc(request):
     data={}
     cid=request.GET.get("uid")
     uname=request.session["uname"]
-    # uname="Abhi123"
+    # uname="maski123"
     ob=Waste_table.objects.get(id=int(cid))
     dlat=ob.Latitude
     dlong=ob.Longitude
